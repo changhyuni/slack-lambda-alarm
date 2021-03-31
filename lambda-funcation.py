@@ -23,7 +23,8 @@ def lambda_handler(event, context):
     logger.info("Event: " + str(event))
     message = json.loads(event['Records'][0]['Sns']['Message'])
     logger.info("Message: " + str(message))
-
+    
+    ## Slack Messages Config
     alarm_name = message['AlarmName']
     alarm_description = message['AlarmDescription']
     old_state = message['OldStateValue']
